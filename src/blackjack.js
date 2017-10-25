@@ -1,11 +1,4 @@
-/**
- * @author       Richard Davey <rich@photonstorm.com>
- * @copyright    2016 Photon Storm Ltd.
- * @license      You are permitted to use this code in your own commercial games, including 
- *               games sold to clients, publishers, games portals or sponsors.
- *               It may not be distributed anywhere in source code form. Including printed in a
- *               book, sold as a 'template', or uploaded to a public service such as GitHub.
- */
+
 
 /**
  * Phaser Games Pack 1 - Black Jack Game Template
