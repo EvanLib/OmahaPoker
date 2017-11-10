@@ -23,11 +23,12 @@ OmahaHi.Card = function (suit, value, texture) {
 
 OmahaHi.Game = function (game) {
     //
-    this.DEBUG = true;
 
     //  The default bet amount
     this.bet = 10;
-
+    
+    //Debug
+    this.debug = true;
     //  The default amount of money in the bank
     this.money = 1000;
 
@@ -114,7 +115,14 @@ OmahaHi.Game.prototype = {
 
         this.hitButton = this.add.button(150, 530, 'buttons', this.clickHit, this, 'hitOver', 'hitOut', null, null, this.playGroup);
         this.hitButton.anchor.x = 0.5;
+        
+        //Debug Info
+       if( this.debug) 
+       {
+           this.debugInfo= this.add.text(0, 0, 'Hand info: ', { font: "bold 14px Arial", fill: "#ff0000", boundsAlignH: "left", boundsAlignV: "top" }, this.playGroup);
 
+        this.debugInfo.setTextBounds(620, 425, 100, 300);
+       }
         this.standButton = this.add.button(400, 530, 'buttons', this.clickStand, this, 'standOver', 'standOut', null, null, this.playGroup);
         this.standButton.anchor.x = 0.5;
 
@@ -178,9 +186,7 @@ OmahaHi.Game.prototype = {
 
     },
 
-    /**
-     * Called when the 'increase bet' arrow is clicked
-     */
+    /** Called when the 'increase bet' arrow is clicked */
     clickIncreaseBet: function () {
 
         this.bet = this.math.maxAdd(this.bet, 10, this.money);
@@ -263,7 +269,7 @@ OmahaHi.Game.prototype = {
         this.dealCardToDealer(0, false);
 
         this.dealCardToPlayer(1000);
-
+        this.dealCardToPlayer(1000);
         this.dealCardToPlayer(1000);
         var tween = this.dealCardToDealer(1500, true);
 
