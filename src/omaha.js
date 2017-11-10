@@ -1,36 +1,6 @@
 
 
-/**
- * Phaser Games Pack 1 - Black Jack Game Template
- * ----------------------------------------------
- *
- * This template is for the classic card game BlackJack, also often known as 21.
- *
- * To play the game, first set your bet. You start with $1000 in the bank. Use the
- * up and down arrows to increase or decrease the bet, then press Play to start.
- * The cards will be dealt, and then you can decide on your actions:
- * 
- * - Hit: Take another card from the dealer.
- * - Stand: Hold with the cards you've got.
- * - Double Down: Receive just one more card from the dealer, and double your bet.
- *
- * The aim is to have a total value of 21 from your cards. If you go over 21, you've
- * gone bust.
- *
- * See if you can break the casino, or go home shirtless!
- *
- * This version doesn't include the ability to surrender, or split your deck,
- * but aside from that it plays a mean game.
- *
- * See Wikipedia for the rules: https://en.wikipedia.org/wiki/Blackjack
- * 
- * In the 'psd' folder you'll find the PhotoShop files used to generate the
- * UI buttons in this game.
- *
- * The card assets are by Kenny Vleugels: http://kenney.nl/assets/boardgame-pack
- */
-
-var BlackJack = {
+var OmahaHi = {
     PLAYER: 0,
     DEALER: 1
 };
@@ -39,7 +9,7 @@ var BlackJack = {
  * This is a Card object, used through-out the game internally.
  * It consists of a sprite, a suit, and a card value.
  */
-BlackJack.Card = function (suit, value, texture) {
+OmahaHi.Card = function (suit, value, texture) {
 
     if (texture === undefined) { texture = value; }
 
@@ -51,7 +21,9 @@ BlackJack.Card = function (suit, value, texture) {
 
 };
 
-BlackJack.Game = function (game) {
+OmahaHi.Game = function (game) {
+    //
+    this.DEBUG = true;
 
     //  The default bet amount
     this.bet = 10;
@@ -83,7 +55,7 @@ BlackJack.Game = function (game) {
     this.hand = null;
     this.dealer = null;
 
-    this.turn = BlackJack.PLAYER;
+    this.turn = OmahaHi.PLAYER;
 
     this.playerHandMin = 0;
     this.playerHandMax = 0;
@@ -97,7 +69,7 @@ BlackJack.Game = function (game) {
 
 };
 
-BlackJack.Game.prototype = {
+OmahaHi.Game.prototype = {
 
     preload: function () {
 
@@ -167,7 +139,7 @@ BlackJack.Game.prototype = {
 
     /**
      * This starts a new round going.
-     * 
+     *
      * It removes all of the cards (if visible) and swaps in the betting UI
      * and text fields, unless you've run out of money!
      */
@@ -180,7 +152,7 @@ BlackJack.Game.prototype = {
             this.bet = this.money;
         }
 
-        this.turn = BlackJack.PLAYER;
+        this.turn = OmahaHi.PLAYER;
 
         this.hitButton.alpha = 1;
         this.standButton.alpha = 1;
@@ -257,7 +229,7 @@ BlackJack.Game.prototype = {
     resetDeck: function () {
 
         //  Create our deck of cards
-        //  
+        //
         //  Clubs, Spades, Hearts, Diamonds
         //  2 - 10, Ace, Jack, Queen, King
 
@@ -269,13 +241,13 @@ BlackJack.Game.prototype = {
         {
             for (var i = 2; i <= 10; i++)
             {
-                this.deck.push(new BlackJack.Card(suits[s], i));
+                this.deck.push(new OmahaHi.Card(suits[s], i));
             }
-            
-            this.deck.push(new BlackJack.Card(suits[s], 11, 'Ace'));
-            this.deck.push(new BlackJack.Card(suits[s], 10, 'Jack'));
-            this.deck.push(new BlackJack.Card(suits[s], 10, 'Queen'));
-            this.deck.push(new BlackJack.Card(suits[s], 10, 'King'));
+
+            this.deck.push(new OmahaHi.Card(suits[s], 11, 'Ace'));
+            this.deck.push(new OmahaHi.Card(suits[s], 10, 'Jack'));
+            this.deck.push(new OmahaHi.Card(suits[s], 10, 'Queen'));
+            this.deck.push(new OmahaHi.Card(suits[s], 10, 'King'));
         }
 
     },
@@ -288,10 +260,11 @@ BlackJack.Game.prototype = {
 
         this.dealCardToPlayer(0);
 
-        this.dealCardToDealer(500, false);
+        this.dealCardToDealer(0, false);
 
         this.dealCardToPlayer(1000);
 
+        this.dealCardToPlayer(1000);
         var tween = this.dealCardToDealer(1500, true);
 
         tween.onComplete.add(this.calculatePlayerHand, this);
@@ -300,7 +273,7 @@ BlackJack.Game.prototype = {
 
     /**
      * Deals a random card to the player.
-     * 
+     *
      * You'll want to adjust the coordinates used in here if you change
      * the layout of the game screen around.
      */
@@ -325,7 +298,7 @@ BlackJack.Game.prototype = {
 
     /**
      * Deals a random card to the dealer.
-     * 
+     *
      * You'll want to adjust the coordinates used in here if you change
      * the layout of the game screen around.
      */
@@ -352,7 +325,7 @@ BlackJack.Game.prototype = {
 
     /**
      * Calculates what the player has in their hand.
-     * 
+     *
      * Called automatically after the initial deal, and also
      * after the players action.
      *
@@ -411,7 +384,7 @@ BlackJack.Game.prototype = {
         this.standButton.alpha = 0.5;
         this.doubleDownButton.alpha = 0.5;
 
-        this.turn = BlackJack.DEALER;
+        this.turn = OmahaHi.DEALER;
 
         //  Turn over the hole card (tween it?)
         this.dealer[0].sprite.frameName = this.dealer[0].texture;
@@ -480,15 +453,15 @@ BlackJack.Game.prototype = {
                     }
                     else
                     {
-                        if (this.playerHasBlackjack() && this.dealerHasBlackjack())
+                        if (this.playerHasOmahaHi() && this.dealerHasOmahaHi())
                         {
                             this.tie();
                         }
-                        else if (this.dealerHasBlackjack())
+                        else if (this.dealerHasOmahaHi())
                         {
                             this.dealerWins();
                         }
-                        else if (this.playerHasBlackjack())
+                        else if (this.playerHasOmahaHi())
                         {
                             this.playerWins();
                         }
@@ -509,7 +482,7 @@ BlackJack.Game.prototype = {
 
     clickHit: function () {
 
-        if (this.turn === BlackJack.DEALER)
+        if (this.turn === OmahaHi.DEALER)
         {
             return;
         }
@@ -522,7 +495,7 @@ BlackJack.Game.prototype = {
 
     clickStand: function () {
 
-        if (this.turn === BlackJack.DEALER)
+        if (this.turn === OmahaHi.DEALER)
         {
             return;
         }
@@ -533,7 +506,7 @@ BlackJack.Game.prototype = {
 
     clickDoubleDown: function () {
 
-        if (this.turn === BlackJack.DEALER)
+        if (this.turn === OmahaHi.DEALER)
         {
             return;
         }
@@ -548,7 +521,7 @@ BlackJack.Game.prototype = {
 
     },
 
-    playerHasBlackjack: function () {
+    playerHasOmahaHi: function () {
 
         if (this.hand.length === 2 && this.playerHandBest === 21)
         {
@@ -563,7 +536,7 @@ BlackJack.Game.prototype = {
 
     },
 
-    dealerHasBlackjack: function () {
+    dealerHasOmahaHi: function () {
 
         if (this.dealer.length === 2 && this.dealerHandBest === 21)
         {
@@ -587,7 +560,7 @@ BlackJack.Game.prototype = {
 
         var winnings = this.bet;
 
-        if (this.playerHasBlackjack())
+        if (this.playerHasOmahaHi())
         {
             winnings = this.bet + (this.bet * 0.5);
         }
@@ -665,4 +638,4 @@ BlackJack.Game.prototype = {
 
 var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game');
 
-game.state.add('BlackJack.Game', BlackJack.Game, true);
+game.state.add('OmahaHi.Game', OmahaHi.Game, true);

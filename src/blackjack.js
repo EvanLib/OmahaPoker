@@ -105,7 +105,7 @@ BlackJack.Game.prototype = {
 
         this.load.atlas('cards');
         this.load.atlas('buttons');
-
+        this.Game.Debug = true;
     },
 
     create: function () {
