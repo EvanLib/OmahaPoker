@@ -1,0 +1,1290 @@
+<!-- HTML generated using hilite.me --><div style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><table><tr><td><pre style="margin: 0; line-height: 125%">  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+ 20
+ 21
+ 22
+ 23
+ 24
+ 25
+ 26
+ 27
+ 28
+ 29
+ 30
+ 31
+ 32
+ 33
+ 34
+ 35
+ 36
+ 37
+ 38
+ 39
+ 40
+ 41
+ 42
+ 43
+ 44
+ 45
+ 46
+ 47
+ 48
+ 49
+ 50
+ 51
+ 52
+ 53
+ 54
+ 55
+ 56
+ 57
+ 58
+ 59
+ 60
+ 61
+ 62
+ 63
+ 64
+ 65
+ 66
+ 67
+ 68
+ 69
+ 70
+ 71
+ 72
+ 73
+ 74
+ 75
+ 76
+ 77
+ 78
+ 79
+ 80
+ 81
+ 82
+ 83
+ 84
+ 85
+ 86
+ 87
+ 88
+ 89
+ 90
+ 91
+ 92
+ 93
+ 94
+ 95
+ 96
+ 97
+ 98
+ 99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645</pre></td><td><pre style="margin: 0; line-height: 125%"><span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">OmahaHi</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #000000">PLAYER</span>: <span style="color: #204a87; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span>
+    <span style="color: #000000">DEALER</span>: <span style="color: #204a87; font-weight: bold">1</span>
+<span style="color: #000000; font-weight: bold">};</span>
+
+<span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic"> * This is a Card object, used through-out the game internally.</span>
+<span style="color: #8f5902; font-style: italic"> * It consists of a sprite, a suit, and a card value.</span>
+<span style="color: #8f5902; font-style: italic"> */</span>
+<span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">Card</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">suit</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">value</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">texture</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+
+    <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">texture</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #204a87; font-weight: bold">undefined</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">texture</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">value</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000; font-weight: bold">}</span>
+
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">suit</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">suit</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">value</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">value</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">texture</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">suit</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #000000">texture</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sprite</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+
+<span style="color: #000000; font-weight: bold">};</span>
+
+<span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">Game</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">game</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+    <span style="color: #8f5902; font-style: italic">//</span>
+
+    <span style="color: #8f5902; font-style: italic">//  The default bet amount</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #8f5902; font-style: italic">//Debug</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">debug</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #8f5902; font-style: italic">//  The default amount of money in the bank</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">money</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">1000</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #8f5902; font-style: italic">//  This Group contains all the UI used when placing your bet</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betGroup</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">upButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">downButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betText</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">moneyText</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #8f5902; font-style: italic">//  This Group contains the game playing screen and UI</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playGroup</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hitButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">standButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">doubleDownButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerText</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">cardsGroup</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">deck</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hand</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">turn</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">PLAYER</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandMin</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandMax</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandMin</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandMax</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #8f5902; font-style: italic">//  Toggle this to change how the dealer responds to a soft 17</span>
+    <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hitOnSoft17</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">;</span>
+
+<span style="color: #000000; font-weight: bold">};</span>
+
+<span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">Game</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">prototype</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">{</span>
+
+    <span style="color: #000000">preload</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">load</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">path</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&#39;assets/&#39;</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">load</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">atlas</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&#39;cards&#39;</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">load</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">atlas</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&#39;buttons&#39;</span><span style="color: #000000; font-weight: bold">);</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #000000">create</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">game</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">stage</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">backgroundColor</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&#39;#146105&#39;</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">money</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">1000</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #8f5902; font-style: italic">//  Group 1 - The placing a bet screen</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betGroup</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">group</span><span style="color: #000000; font-weight: bold">();</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">moneyText</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;Bank $1000&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">font</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;bold 48px Arial&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">fill</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;#fff&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">boundsAlignH</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;center&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">boundsAlignV</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;middle&quot;</span> <span style="color: #000000; font-weight: bold">},</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betGroup</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">moneyText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">setShadow</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">3</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">3</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;rgba(0, 0, 0, 0.5)&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">2</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">moneyText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">setTextBounds</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">50</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">800</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">100</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">upButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">button</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">world</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">centerX</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">200</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;buttons&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">clickIncreaseBet</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;up&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;up&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betGroup</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">upButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">anchor</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">x</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0.5</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betText</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;Bet $10&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">font</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;bold 40px Arial&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">fill</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;#fff&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">boundsAlignH</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;center&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">boundsAlignV</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;middle&quot;</span> <span style="color: #000000; font-weight: bold">},</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betGroup</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">setShadow</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">3</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">3</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;rgba(0, 0, 0, 0.5)&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">2</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">setTextBounds</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">250</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">800</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">100</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">downButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">button</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">world</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">centerX</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">350</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;buttons&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">clickDecreaseBet</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;down&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;down&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betGroup</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">downButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">anchor</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">x</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0.5</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">button</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">world</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">centerX</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">480</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;buttons&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">clickPlay</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;playOver&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;playOut&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betGroup</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">anchor</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">x</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0.5</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #8f5902; font-style: italic">//  Group 2 - The playing screen</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playGroup</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">group</span><span style="color: #000000; font-weight: bold">();</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hitButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">button</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">150</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">530</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;buttons&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">clickHit</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;hitOver&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;hitOut&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playGroup</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hitButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">anchor</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">x</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0.5</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #8f5902; font-style: italic">//Debug Info</span>
+       <span style="color: #204a87; font-weight: bold">if</span><span style="color: #000000; font-weight: bold">(</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">debug</span><span style="color: #000000; font-weight: bold">)</span>
+       <span style="color: #000000; font-weight: bold">{</span>
+           <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">debugInfo</span><span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;Hand info: &#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">font</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;bold 14px Arial&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">fill</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;#ff0000&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">boundsAlignH</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;left&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">boundsAlignV</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;top&quot;</span> <span style="color: #000000; font-weight: bold">},</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playGroup</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">debugInfo</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">setTextBounds</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">620</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">425</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">100</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">300</span><span style="color: #000000; font-weight: bold">);</span>
+       <span style="color: #000000; font-weight: bold">}</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">standButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">button</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">400</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">530</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;buttons&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">clickStand</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;standOver&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;standOut&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playGroup</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">standButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">anchor</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">x</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0.5</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">doubleDownButton</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">button</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">650</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">530</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;buttons&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">clickDoubleDown</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;doubleDownOver&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;doubleDownOut&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">null</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playGroup</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">doubleDownButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">anchor</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">x</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0.5</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #8f5902; font-style: italic">//  Labels</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerText</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;Dealer&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">font</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;bold 24px Arial&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">fill</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;#fff&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">boundsAlignH</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;left&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">boundsAlignV</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;top&quot;</span> <span style="color: #000000; font-weight: bold">},</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playGroup</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">setShadow</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">3</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">3</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;rgba(0, 0, 0, 0.5)&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">2</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">setTextBounds</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">620</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">50</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">100</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">300</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;Player&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">font</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;bold 24px Arial&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">fill</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;#fff&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">boundsAlignH</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;left&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">boundsAlignV</span><span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&quot;top&quot;</span> <span style="color: #000000; font-weight: bold">},</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playGroup</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">setShadow</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">3</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">3</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;rgba(0, 0, 0, 0.5)&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">2</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">setTextBounds</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">620</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">270</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">100</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">300</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">cardsGroup</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">group</span><span style="color: #000000; font-weight: bold">();</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">cardsGroup</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">scale</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">set</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0.92</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">startRound</span><span style="color: #000000; font-weight: bold">();</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * This starts a new round going.</span>
+<span style="color: #8f5902; font-style: italic">     *</span>
+<span style="color: #8f5902; font-style: italic">     * It removes all of the cards (if visible) and swaps in the betting UI</span>
+<span style="color: #8f5902; font-style: italic">     * and text fields, unless you&#39;ve run out of money!</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">startRound</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">cardsGroup</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">removeAll</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span> <span style="color: #ce5c00; font-weight: bold">&gt;</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">money</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">money</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">turn</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">PLAYER</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hitButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">alpha</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">standButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">alpha</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">doubleDownButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">alpha</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">money</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">moneyText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;You are bankrupt!&quot;</span><span style="color: #000000; font-weight: bold">;</span>
+
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">visible</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">false</span><span style="color: #000000; font-weight: bold">;</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">upButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">visible</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">false</span><span style="color: #000000; font-weight: bold">;</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">downButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">visible</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">false</span><span style="color: #000000; font-weight: bold">;</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">visible</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">false</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+        <span style="color: #204a87; font-weight: bold">else</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">moneyText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Bank $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">money</span><span style="color: #000000; font-weight: bold">;</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Bet $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betGroup</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">visible</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playGroup</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">visible</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">false</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/** Called when the &#39;increase bet&#39; arrow is clicked */</span>
+    <span style="color: #000000">clickIncreaseBet</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">math</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">maxAdd</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">money</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Bet $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * Called when the &#39;decrease bet&#39; arrow is clicked</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">clickDecreaseBet</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">math</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">minSub</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Bet $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * Called when the play button is clicked, after the bet has been set.</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">clickPlay</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">betGroup</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">visible</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">false</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Dealer&quot;</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Player\n\n\n\nBet $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playGroup</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">visible</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">resetDeck</span><span style="color: #000000; font-weight: bold">();</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hand</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">[];</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">[];</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">initialDeal</span><span style="color: #000000; font-weight: bold">();</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">//  The core Game Loop starts here</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * Resets the whole deck of cards.</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">resetDeck</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #8f5902; font-style: italic">//  Create our deck of cards</span>
+        <span style="color: #8f5902; font-style: italic">//</span>
+        <span style="color: #8f5902; font-style: italic">//  Clubs, Spades, Hearts, Diamonds</span>
+        <span style="color: #8f5902; font-style: italic">//  2 - 10, Ace, Jack, Queen, King</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">deck</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">[];</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">suits</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">[</span> <span style="color: #4e9a06">&#39;c&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;s&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;h&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;d&#39;</span> <span style="color: #000000; font-weight: bold">];</span>
+
+        <span style="color: #204a87; font-weight: bold">for</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">s</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000">s</span> <span style="color: #ce5c00; font-weight: bold">&lt;</span> <span style="color: #000000">suits</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">length</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000">s</span><span style="color: #ce5c00; font-weight: bold">++</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">for</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">i</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">2</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000">i</span> <span style="color: #ce5c00; font-weight: bold">&lt;=</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000">i</span><span style="color: #ce5c00; font-weight: bold">++</span><span style="color: #000000; font-weight: bold">)</span>
+            <span style="color: #000000; font-weight: bold">{</span>
+                <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">deck</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">Card</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">suits</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #000000">s</span><span style="color: #000000; font-weight: bold">],</span> <span style="color: #000000">i</span><span style="color: #000000; font-weight: bold">));</span>
+            <span style="color: #000000; font-weight: bold">}</span>
+
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">deck</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">Card</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">suits</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #000000">s</span><span style="color: #000000; font-weight: bold">],</span> <span style="color: #0000cf; font-weight: bold">11</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;Ace&#39;</span><span style="color: #000000; font-weight: bold">));</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">deck</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">Card</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">suits</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #000000">s</span><span style="color: #000000; font-weight: bold">],</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;Jack&#39;</span><span style="color: #000000; font-weight: bold">));</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">deck</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">Card</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">suits</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #000000">s</span><span style="color: #000000; font-weight: bold">],</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;Queen&#39;</span><span style="color: #000000; font-weight: bold">));</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">deck</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">Card</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">suits</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #000000">s</span><span style="color: #000000; font-weight: bold">],</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;King&#39;</span><span style="color: #000000; font-weight: bold">));</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * The first deal is two cards the player and dealer,</span>
+<span style="color: #8f5902; font-style: italic">     * after which the players hand is calculated.</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">initialDeal</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealCardToPlayer</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealCardToDealer</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">false</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealCardToPlayer</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">1000</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealCardToPlayer</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">1000</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealCardToPlayer</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">1000</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">tween</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealCardToDealer</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">1500</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #000000">tween</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">onComplete</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">calculatePlayerHand</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">);</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * Deals a random card to the player.</span>
+<span style="color: #8f5902; font-style: italic">     *</span>
+<span style="color: #8f5902; font-style: italic">     * You&#39;ll want to adjust the coordinates used in here if you change</span>
+<span style="color: #8f5902; font-style: italic">     * the layout of the game screen around.</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">dealCardToPlayer</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">delay</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">card</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">getCardFromDeck</span><span style="color: #000000; font-weight: bold">();</span>
+
+        <span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sprite</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">cardsGroup</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">create</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">400</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #ce5c00; font-weight: bold">-</span><span style="color: #0000cf; font-weight: bold">200</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;cards&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">texture</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sprite</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bringToTop</span><span style="color: #000000; font-weight: bold">();</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">x</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">32</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hand</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">length</span> <span style="color: #ce5c00; font-weight: bold">*</span> <span style="color: #0000cf; font-weight: bold">80</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">y</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">300</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hand</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">length</span> <span style="color: #ce5c00; font-weight: bold">*</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">tween</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sprite</span><span style="color: #000000; font-weight: bold">).</span><span style="color: #000000">to</span><span style="color: #000000; font-weight: bold">(</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">y</span>: <span style="color: #204a87; font-weight: bold">y</span> <span style="color: #000000; font-weight: bold">},</span> <span style="color: #0000cf; font-weight: bold">500</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;Sine.easeIn&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">delay</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">tween</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">tween</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sprite</span><span style="color: #000000; font-weight: bold">).</span><span style="color: #000000">to</span><span style="color: #000000; font-weight: bold">(</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">x</span>: <span style="color: #204a87; font-weight: bold">x</span> <span style="color: #000000; font-weight: bold">},</span> <span style="color: #0000cf; font-weight: bold">500</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;Sine.easeIn&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">delay</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #0000cf; font-weight: bold">250</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hand</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #000000">tween</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * Deals a random card to the dealer.</span>
+<span style="color: #8f5902; font-style: italic">     *</span>
+<span style="color: #8f5902; font-style: italic">     * You&#39;ll want to adjust the coordinates used in here if you change</span>
+<span style="color: #8f5902; font-style: italic">     * the layout of the game screen around.</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">dealCardToDealer</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">delay</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">show</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">card</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">getCardFromDeck</span><span style="color: #000000; font-weight: bold">();</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">frame</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">show</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #ce5c00; font-weight: bold">?</span> <span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">texture</span> <span style="color: #ce5c00; font-weight: bold">:</span> <span style="color: #4e9a06">&#39;back&#39;</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sprite</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">cardsGroup</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">create</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">400</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #ce5c00; font-weight: bold">-</span><span style="color: #0000cf; font-weight: bold">200</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;cards&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">frame</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sprite</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bringToTop</span><span style="color: #000000; font-weight: bold">();</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">x</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">32</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">length</span> <span style="color: #ce5c00; font-weight: bold">*</span> <span style="color: #0000cf; font-weight: bold">80</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">y</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">40</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">length</span> <span style="color: #ce5c00; font-weight: bold">*</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">tween</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sprite</span><span style="color: #000000; font-weight: bold">).</span><span style="color: #000000">to</span><span style="color: #000000; font-weight: bold">(</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">y</span>: <span style="color: #204a87; font-weight: bold">y</span> <span style="color: #000000; font-weight: bold">},</span> <span style="color: #0000cf; font-weight: bold">500</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;Sine.easeIn&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">delay</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">tween</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">tween</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">sprite</span><span style="color: #000000; font-weight: bold">).</span><span style="color: #000000">to</span><span style="color: #000000; font-weight: bold">(</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">x</span>: <span style="color: #204a87; font-weight: bold">x</span> <span style="color: #000000; font-weight: bold">},</span> <span style="color: #0000cf; font-weight: bold">500</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&quot;Sine.easeIn&quot;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">delay</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #0000cf; font-weight: bold">250</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">push</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #000000">tween</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * Calculates what the player has in their hand.</span>
+<span style="color: #8f5902; font-style: italic">     *</span>
+<span style="color: #8f5902; font-style: italic">     * Called automatically after the initial deal, and also</span>
+<span style="color: #8f5902; font-style: italic">     * after the players action.</span>
+<span style="color: #8f5902; font-style: italic">     *</span>
+<span style="color: #8f5902; font-style: italic">     * Automatically calls dealersTurn, and updates display text.</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">calculatePlayerHand</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">tween</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">doubleDown</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">doubleDown</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #204a87; font-weight: bold">undefined</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span> <span style="color: #000000">doubleDown</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">false</span><span style="color: #000000; font-weight: bold">;</span> <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">min</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">max</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hand</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">forEach</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+
+            <span style="color: #8f5902; font-style: italic">//  A special condition for the Ace value (1 or 11)</span>
+            <span style="color: #000000">min</span> <span style="color: #ce5c00; font-weight: bold">+=</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">value</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">11</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #ce5c00; font-weight: bold">?</span> <span style="color: #000000">1</span> : <span style="color: #204a87; font-weight: bold">card.value</span><span style="color: #000000; font-weight: bold">;</span>
+            <span style="color: #000000">max</span> <span style="color: #ce5c00; font-weight: bold">+=</span> <span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">value</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #000000; font-weight: bold">});</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandMin</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">min</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandMax</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">max</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">max</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">max</span> <span style="color: #ce5c00; font-weight: bold">&gt;</span> <span style="color: #0000cf; font-weight: bold">21</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">min</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">&gt;</span> <span style="color: #0000cf; font-weight: bold">21</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Player\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #4e9a06">&quot; BUST!\n\nBet $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealersTurn</span><span style="color: #000000; font-weight: bold">();</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+        <span style="color: #204a87; font-weight: bold">else</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Player\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #4e9a06">&quot;\n\nBet $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+
+            <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">21</span> <span style="color: #ce5c00; font-weight: bold">||</span> <span style="color: #000000">doubleDown</span><span style="color: #000000; font-weight: bold">)</span>
+            <span style="color: #000000; font-weight: bold">{</span>
+                <span style="color: #8f5902; font-style: italic">//  Automatically switch to the dealers turn</span>
+                <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealersTurn</span><span style="color: #000000; font-weight: bold">();</span>
+            <span style="color: #000000; font-weight: bold">}</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * The dealers turn. Basically just fades out the UI buttons, turns</span>
+<span style="color: #8f5902; font-style: italic">     * over the dealers cards, then calculates his hand.</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">dealersTurn</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hitButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">alpha</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0.5</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">standButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">alpha</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0.5</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">doubleDownButton</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">alpha</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0.5</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">turn</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">DEALER</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #8f5902; font-style: italic">//  Turn over the hole card (tween it?)</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">sprite</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">frameName</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">texture</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">calculateDealerHand</span><span style="color: #000000; font-weight: bold">();</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * The dealers hand calculation.</span>
+<span style="color: #8f5902; font-style: italic">     * Looks at the value in his hand, compares to the player, then carries</span>
+<span style="color: #8f5902; font-style: italic">     * on going until he either wins or busts.</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">calculateDealerHand</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">min</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">max</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">forEach</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">function</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #000000; font-weight: bold">{</span>
+
+            <span style="color: #8f5902; font-style: italic">//  A special condition for the Ace value (1 or 11)</span>
+            <span style="color: #000000">min</span> <span style="color: #ce5c00; font-weight: bold">+=</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">value</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">11</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #ce5c00; font-weight: bold">?</span> <span style="color: #000000">1</span> : <span style="color: #204a87; font-weight: bold">card.value</span><span style="color: #000000; font-weight: bold">;</span>
+            <span style="color: #000000">max</span> <span style="color: #ce5c00; font-weight: bold">+=</span> <span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">value</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #000000; font-weight: bold">});</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandMin</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">min</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandMax</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">max</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">max</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">max</span> <span style="color: #ce5c00; font-weight: bold">&gt;</span> <span style="color: #0000cf; font-weight: bold">21</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #000000">min</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span> <span style="color: #ce5c00; font-weight: bold">&gt;</span> <span style="color: #0000cf; font-weight: bold">21</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Dealer\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #4e9a06">&quot; BUST!&quot;</span><span style="color: #000000; font-weight: bold">;</span>
+
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerWins</span><span style="color: #000000; font-weight: bold">();</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+        <span style="color: #204a87; font-weight: bold">else</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Dealer\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span><span style="color: #000000; font-weight: bold">;</span>
+
+            <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">&gt;</span> <span style="color: #0000cf; font-weight: bold">21</span><span style="color: #000000; font-weight: bold">)</span>
+            <span style="color: #000000; font-weight: bold">{</span>
+                <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerWins</span><span style="color: #000000; font-weight: bold">();</span>
+            <span style="color: #000000; font-weight: bold">}</span>
+            <span style="color: #204a87; font-weight: bold">else</span>
+            <span style="color: #000000; font-weight: bold">{</span>
+                <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span> <span style="color: #ce5c00; font-weight: bold">&lt;</span> <span style="color: #0000cf; font-weight: bold">17</span><span style="color: #000000; font-weight: bold">)</span>
+                <span style="color: #000000; font-weight: bold">{</span>
+                    <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">tween</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealCardToDealer</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">1500</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">);</span>
+                    <span style="color: #000000">tween</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">onComplete</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">calculateDealerHand</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">);</span>
+                <span style="color: #000000; font-weight: bold">}</span>
+                <span style="color: #204a87; font-weight: bold">else</span>
+                <span style="color: #000000; font-weight: bold">{</span>
+                    <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span> <span style="color: #ce5c00; font-weight: bold">&lt;</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span><span style="color: #000000; font-weight: bold">)</span>
+                    <span style="color: #000000; font-weight: bold">{</span>
+                        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerWins</span><span style="color: #000000; font-weight: bold">();</span>
+                    <span style="color: #000000; font-weight: bold">}</span>
+                    <span style="color: #204a87; font-weight: bold">else</span> <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span> <span style="color: #ce5c00; font-weight: bold">&gt;</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span><span style="color: #000000; font-weight: bold">)</span>
+                    <span style="color: #000000; font-weight: bold">{</span>
+                        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerWins</span><span style="color: #000000; font-weight: bold">();</span>
+                    <span style="color: #000000; font-weight: bold">}</span>
+                    <span style="color: #204a87; font-weight: bold">else</span>
+                    <span style="color: #000000; font-weight: bold">{</span>
+                        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHasOmahaHi</span><span style="color: #000000; font-weight: bold">()</span> <span style="color: #ce5c00; font-weight: bold">&amp;&amp;</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHasOmahaHi</span><span style="color: #000000; font-weight: bold">())</span>
+                        <span style="color: #000000; font-weight: bold">{</span>
+                            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">tie</span><span style="color: #000000; font-weight: bold">();</span>
+                        <span style="color: #000000; font-weight: bold">}</span>
+                        <span style="color: #204a87; font-weight: bold">else</span> <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHasOmahaHi</span><span style="color: #000000; font-weight: bold">())</span>
+                        <span style="color: #000000; font-weight: bold">{</span>
+                            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerWins</span><span style="color: #000000; font-weight: bold">();</span>
+                        <span style="color: #000000; font-weight: bold">}</span>
+                        <span style="color: #204a87; font-weight: bold">else</span> <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHasOmahaHi</span><span style="color: #000000; font-weight: bold">())</span>
+                        <span style="color: #000000; font-weight: bold">{</span>
+                            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerWins</span><span style="color: #000000; font-weight: bold">();</span>
+                        <span style="color: #000000; font-weight: bold">}</span>
+                        <span style="color: #204a87; font-weight: bold">else</span>
+                        <span style="color: #000000; font-weight: bold">{</span>
+                            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">tie</span><span style="color: #000000; font-weight: bold">();</span>
+                        <span style="color: #000000; font-weight: bold">}</span>
+                    <span style="color: #000000; font-weight: bold">}</span>
+                <span style="color: #000000; font-weight: bold">}</span>
+            <span style="color: #000000; font-weight: bold">}</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">//  From this point on is mostly UI related functions, such as clicking</span>
+    <span style="color: #8f5902; font-style: italic">//  the various buttons and responding to them. You&#39;ll find text set</span>
+    <span style="color: #8f5902; font-style: italic">//  in the functions, so be sure to update that as needed.</span>
+
+    <span style="color: #000000">clickHit</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">turn</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">DEALER</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">return</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">tween</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealCardToPlayer</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #000000">tween</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">onComplete</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">calculatePlayerHand</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">);</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #000000">clickStand</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">turn</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">DEALER</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">return</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealersTurn</span><span style="color: #000000; font-weight: bold">();</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #000000">clickDoubleDown</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">turn</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">DEALER</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">return</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span> <span style="color: #ce5c00; font-weight: bold">*=</span> <span style="color: #0000cf; font-weight: bold">2</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Player\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #4e9a06">&quot;\n\nBet $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">tween</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealCardToPlayer</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #000000">tween</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">onComplete</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">calculatePlayerHand</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">);</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #000000">playerHasOmahaHi</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hand</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">length</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">2</span> <span style="color: #ce5c00; font-weight: bold">&amp;&amp;</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">21</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">((</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hand</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">value</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">11</span> <span style="color: #ce5c00; font-weight: bold">&amp;&amp;</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hand</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">value</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #ce5c00; font-weight: bold">||</span>
+                <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hand</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">value</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">10</span> <span style="color: #ce5c00; font-weight: bold">&amp;&amp;</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">hand</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">value</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">11</span><span style="color: #000000; font-weight: bold">))</span>
+            <span style="color: #000000; font-weight: bold">{</span>
+                <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">;</span>
+            <span style="color: #000000; font-weight: bold">}</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #204a87; font-weight: bold">false</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #000000">dealerHasOmahaHi</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">length</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">2</span> <span style="color: #ce5c00; font-weight: bold">&amp;&amp;</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">21</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">((</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">value</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">11</span> <span style="color: #ce5c00; font-weight: bold">&amp;&amp;</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">value</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">10</span><span style="color: #000000; font-weight: bold">)</span> <span style="color: #ce5c00; font-weight: bold">||</span>
+                <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">value</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">10</span> <span style="color: #ce5c00; font-weight: bold">&amp;&amp;</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealer</span><span style="color: #000000; font-weight: bold">[</span><span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">].</span><span style="color: #000000">value</span> <span style="color: #ce5c00; font-weight: bold">===</span> <span style="color: #0000cf; font-weight: bold">11</span><span style="color: #000000; font-weight: bold">))</span>
+            <span style="color: #000000; font-weight: bold">{</span>
+                <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">;</span>
+            <span style="color: #000000; font-weight: bold">}</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #204a87; font-weight: bold">false</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * Called if the players hand wins.</span>
+<span style="color: #8f5902; font-style: italic">     * Adds the money to their winnings, updates the text, and adds a click listener</span>
+<span style="color: #8f5902; font-style: italic">     * to take them back to the betting screen.</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">playerWins</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">winnings</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHasOmahaHi</span><span style="color: #000000; font-weight: bold">())</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #000000">winnings</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span> <span style="color: #ce5c00; font-weight: bold">*</span> <span style="color: #0000cf; font-weight: bold">0.5</span><span style="color: #000000; font-weight: bold">);</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;Player won $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #000000">winnings</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">money</span> <span style="color: #ce5c00; font-weight: bold">+=</span> <span style="color: #000000">winnings</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span> <span style="color: #ce5c00; font-weight: bold">&gt;</span> <span style="color: #0000cf; font-weight: bold">21</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Dealer LOST\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #4e9a06">&quot; BUST!&quot;</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+        <span style="color: #204a87; font-weight: bold">else</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Dealer LOST\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Player WINS\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #4e9a06">&quot;\n\nBet $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">input</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">onDown</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">addOnce</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">startRound</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">);</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #8f5902; font-style: italic">/**</span>
+<span style="color: #8f5902; font-style: italic">     * Called if the dealers hand wins.</span>
+<span style="color: #8f5902; font-style: italic">     * Takes the money from the player, updates the text, and adds a click listener</span>
+<span style="color: #8f5902; font-style: italic">     * to take them back to the betting screen.</span>
+<span style="color: #8f5902; font-style: italic">     */</span>
+    <span style="color: #000000">dealerWins</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #000000">console</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">log</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&quot;Player lost $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">money</span> <span style="color: #ce5c00; font-weight: bold">-=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">money</span> <span style="color: #ce5c00; font-weight: bold">&lt;</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">money</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Dealer WON\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">if</span> <span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">&gt;</span> <span style="color: #0000cf; font-weight: bold">21</span><span style="color: #000000; font-weight: bold">)</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Player LOST\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #4e9a06">&quot; BUST!\n\nBet $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+        <span style="color: #204a87; font-weight: bold">else</span>
+        <span style="color: #000000; font-weight: bold">{</span>
+            <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Player LOST\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #4e9a06">&quot;\n\nBet $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #000000; font-weight: bold">}</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">input</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">onDown</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">addOnce</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">startRound</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">);</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #000000">tie</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Dealer TIE\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">dealerHandBest</span><span style="color: #000000; font-weight: bold">;</span>
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerText</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">text</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #4e9a06">&quot;Player TIE\n\n&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">playerHandBest</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #4e9a06">&quot;\n\nBet $&quot;</span> <span style="color: #ce5c00; font-weight: bold">+</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">bet</span><span style="color: #000000; font-weight: bold">;</span>
+
+        <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">input</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">onDown</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">addOnce</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">startRound</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">);</span>
+
+    <span style="color: #000000; font-weight: bold">},</span>
+
+    <span style="color: #000000">getCardFromDeck</span>: <span style="color: #204a87; font-weight: bold">function</span> <span style="color: #000000; font-weight: bold">()</span> <span style="color: #000000; font-weight: bold">{</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">index</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">rnd</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">between</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">deck</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">length</span> <span style="color: #ce5c00; font-weight: bold">-</span> <span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">);</span>
+
+        <span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">card</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">this</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">deck</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">splice</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #000000">index</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">1</span><span style="color: #000000; font-weight: bold">)[</span><span style="color: #0000cf; font-weight: bold">0</span><span style="color: #000000; font-weight: bold">];</span>
+
+        <span style="color: #204a87; font-weight: bold">return</span> <span style="color: #000000">card</span><span style="color: #000000; font-weight: bold">;</span>
+
+    <span style="color: #000000; font-weight: bold">}</span>
+
+<span style="color: #000000; font-weight: bold">};</span>
+
+<span style="color: #204a87; font-weight: bold">var</span> <span style="color: #000000">game</span> <span style="color: #ce5c00; font-weight: bold">=</span> <span style="color: #204a87; font-weight: bold">new</span> <span style="color: #000000">Phaser</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">Game</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #0000cf; font-weight: bold">800</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #0000cf; font-weight: bold">600</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">Phaser</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">CANVAS</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #4e9a06">&#39;game&#39;</span><span style="color: #000000; font-weight: bold">);</span>
+
+<span style="color: #000000">game</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">state</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">add</span><span style="color: #000000; font-weight: bold">(</span><span style="color: #4e9a06">&#39;OmahaHi.Game&#39;</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #000000">OmahaHi</span><span style="color: #000000; font-weight: bold">.</span><span style="color: #000000">Game</span><span style="color: #000000; font-weight: bold">,</span> <span style="color: #204a87; font-weight: bold">true</span><span style="color: #000000; font-weight: bold">);</span>
+</pre></td></tr></table></div>

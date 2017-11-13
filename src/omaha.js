@@ -2,7 +2,7 @@
 
 var OmahaHi = {
     PLAYER: 0,
-    DEALER: 1
+    OPPONENT: 1
 };
 
 /**
@@ -22,13 +22,14 @@ OmahaHi.Card = function (suit, value, texture) {
 };
 
 OmahaHi.Game = function (game) {
-    //
 
     //  The default bet amount
     this.bet = 10;
-    
+
     //Debug
     this.debug = true;
+    this.debugText = 'debug';
+    this.stage = 'init';
     //  The default amount of money in the bank
     this.money = 1000;
 
@@ -55,6 +56,8 @@ OmahaHi.Game = function (game) {
     this.deck = null;
     this.hand = null;
     this.dealer = null;
+    //Community Table stuff
+    this.community = null;
 
     this.turn = OmahaHi.PLAYER;
 
@@ -64,6 +67,14 @@ OmahaHi.Game = function (game) {
 
     this.dealerHandMin = 0;
     this.dealerHandMax = 0;
+
+    //Omoha hi game stats
+    this.pot = 0;
+    this.blind = 10;
+
+    //Player starts betting
+    this.playerBet = 0;
+
 
     //  Toggle this to change how the dealer responds to a soft 17
     this.hitOnSoft17 = true;
@@ -113,21 +124,35 @@ OmahaHi.Game.prototype = {
 
         this.playGroup = this.add.group();
 
-        this.hitButton = this.add.button(150, 530, 'buttons', this.clickHit, this, 'hitOver', 'hitOut', null, null, this.playGroup);
-        this.hitButton.anchor.x = 0.5;
-        
-        //Debug Info
-       if( this.debug) 
-       {
-           this.debugInfo= this.add.text(0, 0, 'Hand info: ', { font: "bold 14px Arial", fill: "#ff0000", boundsAlignH: "left", boundsAlignV: "top" }, this.playGroup);
 
-        this.debugInfo.setTextBounds(620, 425, 100, 300);
-       }
-        this.standButton = this.add.button(400, 530, 'buttons', this.clickStand, this, 'standOver', 'standOut', null, null, this.playGroup);
-        this.standButton.anchor.x = 0.5;
+        //Round betting Group
+        this.roundBetGroup =  this.add.group();
+        this.callButton = this.add.button(150, 530, 'buttons', this.clickCallBet, this, 'hitOver', 'hitOut', null, null, this.roundBetGroup);
+        this.callButton.anchor.x = 0.5;
+        this.foldButton = this.add.button(400, 530, 'buttons', this.clickFoldBet, this, 'standOver', 'standOut', null, null, this.roundBetGroup);
+        this.foldButton.anchor.x = 0.5;
+        this.raiseButton = this.add.button(650, 530, 'buttons', this.clickRaiseBet, this, 'doubleDownOver', 'doubleDownOut', null, null, this.roundBetGroup);
+        this.raiseButton.anchor.x = 0.5;
 
-        this.doubleDownButton = this.add.button(650, 530, 'buttons', this.clickDoubleDown, this, 'doubleDownOver', 'doubleDownOut', null, null, this.playGroup);
-        this.doubleDownButton.anchor.x = 0.5;
+
+        //player betting Group
+        this.playerBetGroup = this.add.group();
+
+        this.upButton = this.add.button(this.world.centerX, 200, 'buttons', this.clickIncreaseBet, this, 'up', 'up', null, null, this.playerBetGroup);
+        this.upButton.anchor.x = 0.5;
+
+        this.betText = this.add.text(0, 0, 'Bet $10', { font: "bold 40px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle" }, this.playerBetGroup);
+        this.betText.setShadow(3, 3, 'rgba(0, 0, 0, 0.5)', 2);
+        this.betText.setTextBounds(0, 250, 800, 100);
+
+        this.downButton = this.add.button(this.world.centerX, 350, 'buttons', this.clickDecreaseBet, this, 'down', 'down', null, null, this.playerBetGroup);
+        this.downButton.anchor.x = 0.5;
+
+        this.raise = this.add.button(this.world.centerX, 480, 'buttons', this.clickBet, this, 'playOver', 'playOut', null, null, this.playerBetGroup);
+        this.raise.anchor.x = 0.5;
+
+
+
 
         //  Labels
         this.dealerText = this.add.text(0, 0, 'Dealer', { font: "bold 24px Arial", fill: "#fff", boundsAlignH: "left", boundsAlignV: "top" }, this.playGroup);
@@ -139,7 +164,14 @@ OmahaHi.Game.prototype = {
         this.playerText.setTextBounds(620, 270, 100, 300);
 
         this.cardsGroup = this.add.group();
-        this.cardsGroup.scale.set(0.92);
+        this.cardsGroup.scale.set(0.50);
+        //Debug Info
+       if( this.debug)
+       {
+           this.debugInfo= this.add.text(0, 0, this.debugText, { font: "bold 14px Arial", fill: "#ff0000", boundsAlignH: "left", boundsAlignV: "top" }, this.playGroup);
+
+        this.debugInfo.setTextBounds(620, 425, 100, 300);
+       }
 
         this.startRound();
 
@@ -162,10 +194,6 @@ OmahaHi.Game.prototype = {
 
         this.turn = OmahaHi.PLAYER;
 
-        this.hitButton.alpha = 1;
-        this.standButton.alpha = 1;
-        this.doubleDownButton.alpha = 1;
-
         if (this.money === 0)
         {
             this.moneyText.text = "You are bankrupt!";
@@ -183,15 +211,18 @@ OmahaHi.Game.prototype = {
 
         this.betGroup.visible = true;
         this.playGroup.visible = false;
+        this.roundBetGroup.visible = false;
+        this.playerBetGroup.visible = false;
+
 
     },
 
     /** Called when the 'increase bet' arrow is clicked */
     clickIncreaseBet: function () {
 
-        this.bet = this.math.maxAdd(this.bet, 10, this.money);
+        this.playerBet = this.math.maxAdd(this.playerBet, 10, this.money);
 
-        this.betText.text = "Bet $" + this.bet;
+        this.betText.text = "Bet $" + this.playerBet;
 
     },
 
@@ -200,10 +231,40 @@ OmahaHi.Game.prototype = {
      */
     clickDecreaseBet: function () {
 
-        this.bet = this.math.minSub(this.bet, 10, 10);
+        this.playerBet = this.math.minSub(this.playerBet, 10, 10);
 
-        this.betText.text = "Bet $" + this.bet;
+        this.betText.text = "Bet $" + this.playerBet;
 
+    },
+
+    clickCallBet: function() {
+      this.updateDebugInfo("clicked call");
+      this.pot += this.blind;
+      this.money -= this.blind;
+
+      this.turn = OmahaHi.OPPONENT;
+      this.stageBet();
+    },
+    clickRaiseBet: function() {
+      this.updateDebugInfo("clicked Raise");
+      this.playerBetGroup.visible = true;
+    },
+    clickFoldBet: function() {
+      this.opponentWins();
+    },
+
+    /*
+    * During raise bet button
+    */
+    clickBet: function() {
+      //make invisible
+      this.playerBetGroup.visible = false;
+
+      this.playersMoney -= this.playerBet;
+      this.pot += this.playerBet;
+
+      this.turn = OmahaHi.OPPONENT;
+      this.stageBet();
     },
 
     /**
@@ -217,13 +278,15 @@ OmahaHi.Game.prototype = {
         this.playerText.text = "Player\n\n\n\nBet $" + this.bet;
 
         this.playGroup.visible = true;
-
         this.resetDeck();
 
         this.hand = [];
         this.dealer = [];
-
+        //Community card array
+        this.community = [];
         this.initialDeal();
+
+        this.pot = this.blind
 
     },
 
@@ -241,7 +304,7 @@ OmahaHi.Game.prototype = {
 
         this.deck = [];
 
-        var suits = [ 'clubs', 'spades', 'hearts', 'diamonds' ];
+        var suits = [ 'c', 's', 'h', 'd' ];
 
         for (var s = 0; s < suits.length; s++)
         {
@@ -250,10 +313,10 @@ OmahaHi.Game.prototype = {
                 this.deck.push(new OmahaHi.Card(suits[s], i));
             }
 
-            this.deck.push(new OmahaHi.Card(suits[s], 11, 'Ace'));
-            this.deck.push(new OmahaHi.Card(suits[s], 10, 'Jack'));
-            this.deck.push(new OmahaHi.Card(suits[s], 10, 'Queen'));
-            this.deck.push(new OmahaHi.Card(suits[s], 10, 'King'));
+            this.deck.push(new OmahaHi.Card(suits[s], 1, 'Ace'));
+            this.deck.push(new OmahaHi.Card(suits[s], 11, 'Jack'));
+            this.deck.push(new OmahaHi.Card(suits[s], 12, 'Queen'));
+            this.deck.push(new OmahaHi.Card(suits[s], 13, 'King'));
         }
 
     },
@@ -264,17 +327,13 @@ OmahaHi.Game.prototype = {
      */
     initialDeal: function () {
 
-        this.dealCardToPlayer(0);
+        for (var i = 0; i < 4; i++) {
+          this.dealCardToPlayer(500*i, true);
+          tween = this.dealCardToDealer(600*i, false);
+        }
 
-        this.dealCardToDealer(0, false);
-
-        this.dealCardToPlayer(1000);
-        this.dealCardToPlayer(1000);
-        this.dealCardToPlayer(1000);
-        var tween = this.dealCardToDealer(1500, true);
-
-        tween.onComplete.add(this.calculatePlayerHand, this);
-
+        //betting stageBet
+        tween.onComplete.add(this.stageBet(), this);
     },
 
     /**
@@ -291,7 +350,7 @@ OmahaHi.Game.prototype = {
         card.sprite.bringToTop();
 
         var x = 32 + (this.hand.length * 80);
-        var y = 300 + (this.hand.length * 10);
+        var y = 560
 
         this.add.tween(card.sprite).to( { y: y }, 500, "Sine.easeIn", true, delay);
         var tween = this.add.tween(card.sprite).to( { x: x }, 500, "Sine.easeIn", true, delay + 250);
@@ -318,7 +377,7 @@ OmahaHi.Game.prototype = {
         card.sprite.bringToTop();
 
         var x = 32 + (this.dealer.length * 80);
-        var y = 40 + (this.dealer.length * 10);
+        var y = 40
 
         this.add.tween(card.sprite).to( { y: y }, 500, "Sine.easeIn", true, delay);
         var tween = this.add.tween(card.sprite).to( { x: x }, 500, "Sine.easeIn", true, delay + 250);
@@ -328,7 +387,69 @@ OmahaHi.Game.prototype = {
         return tween;
 
     },
+    dealFlop: function (delay, show)
+    {
+      var card1 = this.getCardFromDeck();
+      var card2 = this.getCardFromDeck();
+      var card3 = this.getCardFromDeck();
 
+      card1.sprite = this.cardsGroup.create(400, -200, 'cards', card1.texture);
+      card2.sprite = this.cardsGroup.create(400, -200, 'cards', card2.texture);
+      card3.sprite = this.cardsGroup.create(400, -200, 'cards', card3.texture);
+
+
+      this.community.push(card1, card2, card3);
+      var x = 150
+      var y = 300;
+
+      //Card 1
+      this.add.tween(card1.sprite).to( { y: y }, 500, "Sine.easeIn", true, delay);
+      this.add.tween(card1.sprite).to( { x: x }, 500, "Sine.easeIn", true, delay + 250);
+
+      //Card 2
+      this.add.tween(card2.sprite).to( { y: y }, 500, "Sine.easeIn", true, delay);
+      this.add.tween(card2.sprite).to( { x: x + 160 }, 500, "Sine.easeIn", true, delay + 250);
+
+      //Card 3
+      this.add.tween(card3.sprite).to( { y: y }, 500, "Sine.easeIn", true, delay);
+      var tween = this.add.tween(card3.sprite).to( { x: x + 320 }, 500, "Sine.easeIn", true, delay + 250);
+
+      return tween;
+
+    },
+
+    /**
+    * Allow openent and player chagne betting...
+    * should be cool and stuff.
+    */
+
+    stageBet: function() {
+      this.updateDebugInfo("stage bet");
+      this.complete = false;
+      this.roundBetGroup.visible = false;
+
+      switch (this.turn) {
+        case 0:
+            var complete = this.playerBetStage();
+          break;
+        case 1:
+          this.opponentBetStage();
+          break;
+        default:
+          return;
+
+      }
+
+
+      //Player is given 3 options
+      //flop
+      tween = this.dealFlop(0, false);
+      tween.onComplete.add(this.stageBet(), this);
+    },
+
+    playerBetStage: function() {
+      this.roundBetGroup.visible = true;
+    },
     /**
      * Calculates what the player has in their hand.
      *
@@ -338,45 +459,8 @@ OmahaHi.Game.prototype = {
      * Automatically calls dealersTurn, and updates display text.
      */
     calculatePlayerHand: function (card, tween, doubleDown) {
-
-        if (doubleDown === undefined) { doubleDown = false; }
-
-        var min = 0;
-        var max = 0;
-
-        this.hand.forEach(function(card) {
-
-            //  A special condition for the Ace value (1 or 11)
-            min += (card.value === 11) ? 1 : card.value;
-            max += card.value;
-
-        });
-
-        this.playerHandMin = min;
-        this.playerHandMax = max;
-        this.playerHandBest = max;
-
-        if (max > 21)
-        {
-            this.playerHandBest = min;
-        }
-
-        if (this.playerHandBest > 21)
-        {
-            this.playerText.text = "Player\n\n" + this.playerHandBest + " BUST!\n\nBet $" + this.bet;
-
-            this.dealersTurn();
-        }
-        else
-        {
-            this.playerText.text = "Player\n\n" + this.playerHandBest + "\n\nBet $" + this.bet;
-
-            if (this.playerHandBest === 21 || doubleDown)
-            {
-                //  Automatically switch to the dealers turn
-                this.dealersTurn();
-            }
-        }
+      //debug text
+      this.debugText = "calculate Hand Called";
 
     },
 
@@ -390,7 +474,7 @@ OmahaHi.Game.prototype = {
         this.standButton.alpha = 0.5;
         this.doubleDownButton.alpha = 0.5;
 
-        this.turn = OmahaHi.DEALER;
+        this.turn = OmahaHi.OPPONENT;
 
         //  Turn over the hole card (tween it?)
         this.dealer[0].sprite.frameName = this.dealer[0].texture;
@@ -488,7 +572,7 @@ OmahaHi.Game.prototype = {
 
     clickHit: function () {
 
-        if (this.turn === OmahaHi.DEALER)
+        if (this.turn === OmahaHi.OPPONENT)
         {
             return;
         }
@@ -501,7 +585,7 @@ OmahaHi.Game.prototype = {
 
     clickStand: function () {
 
-        if (this.turn === OmahaHi.DEALER)
+        if (this.turn === OmahaHi.OPPONENT)
         {
             return;
         }
@@ -512,7 +596,7 @@ OmahaHi.Game.prototype = {
 
     clickDoubleDown: function () {
 
-        if (this.turn === OmahaHi.DEALER)
+        if (this.turn === OmahaHi.OPPONENT)
         {
             return;
         }
@@ -638,9 +722,21 @@ OmahaHi.Game.prototype = {
 
         return card;
 
-    }
+    },
+    /*
+    * Random Utillities
 
+    */
+
+    updateDebugInfo(debugInfoText) {
+
+      this.debugInfo.text = debugInfoText;
+    }
 };
+
+
+
+
 
 var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game');
 
