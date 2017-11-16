@@ -1,0 +1,19 @@
+{
+  "name": "omahapoker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/src/omaha.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvanLib/OmahaPoker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvanLib/OmahaPoker/issues"
+  },
+  "homepage": "https://github.com/EvanLib/OmahaPoker#readme"
+}
